@@ -1,11 +1,26 @@
 import { FaShoppingCart, FaStar, FaTag } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { selectedProduct } from "../../redux/productSlice";
+import { addItemToCartApi } from "../../service/apiCollections";
+import { addItemToCartAsync } from "../../redux/cartSlice";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const userId = useSelector((store) => store.user?.userDetails?.id);
+  console.log(userId);
+
+  const handleAddToCart = async () => {
+    dispatch(addItemToCartAsync(product))
+    // let payload = {
+    //   product: product._id,
+    //   user: userId,
+    // };
+    // addItemToCartApi(payload);
+    // console.log("payload", payload);
+  };
+
   return (
     <div className="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 group">
       <div
@@ -43,7 +58,7 @@ const ProductCard = ({ product }) => {
             <FaTag /> Extra Offer Available
           </span>
           <button
-            onClick={() => navigate("/cart")}
+            onClick={handleAddToCart}
             className="p-3 rounded-full border hover:bg-black hover:text-white transition"
           >
             <FaShoppingCart />

@@ -12,6 +12,7 @@ const apiEndPoints = {
       return "/product"
     }
   },
+  ADD_TO_CART:"/cart/add"
 };
 
 export default apiEndPoints;

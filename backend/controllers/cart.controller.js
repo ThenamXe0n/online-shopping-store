@@ -5,15 +5,16 @@ const CartModel = require("../model/cart.model");
  */
 async function addToCart(req, res) {
   try {
-    const cart = await CartModel.create(req.body);
-    res.status(201).json({ message: `product added to cart`, data: cart });
+    const cart = await CartModel.create({...req.body,user:req.userId});
+    const findItem = await CartModel.findById(cart._id).populate("product", "poster name price mrp discount")
+    res.status(201).json({ message: `product added to cart`, data: findItem });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 }
 async function getUserCart(req, res) {
   try {
-    const cart = await CartModel.find({ user: req.params.userId })
+    const cart = await CartModel.find({ user: req.userId })
       .populate("product", "poster name price mrp discount")
       .populate("user", "name email");
     if (cart.length < 1) {

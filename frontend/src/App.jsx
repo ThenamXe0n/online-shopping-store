@@ -14,12 +14,14 @@ import { useEffect } from "react";
 import Notiflix from "notiflix";
 import ProductPage from "./pages/ProductPage";
 import { getAllproductAsync } from "./redux/productSlice";
+import { fetchUserCartItemsAsync } from "./redux/CartSlice";
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(verifyUserLoginAsync());
-    // dispatch(getAllproductAsync());
+    dispatch(fetchUserCartItemsAsync());
+    dispatch(getAllproductAsync());
   }, []);
 
   Notiflix.Confirm.init({

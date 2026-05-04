@@ -60,7 +60,7 @@ async function fetchProducts(req, res) {
   }
 
   let page = req.query.page || 1;
-  let itemPerPage = req.query.limit || 1;
+  let itemPerPage = req.query.limit || 6;
   let skip = (page - 1) * itemPerPage;
 
   try {

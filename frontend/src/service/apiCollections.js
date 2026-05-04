@@ -65,7 +65,15 @@ async function getproductByIdApi(id) {
   }
 }
 
-//create
+//cart api
+async function addItemToCartApi(payload) {
+  try {
+    const response = await axiosInstance.post(apiEndPoints.ADD_TO_CART, payload);
+    return response.data;
+  } catch (error) {
+    return error.response.data;
+  }
+}
 
 export {
   loginUserApi,
@@ -74,4 +82,5 @@ export {
   verifyUserLoginApi,
   getAllproductApi,
   getproductByIdApi,
+  addItemToCartApi
 };
