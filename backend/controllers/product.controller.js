@@ -28,8 +28,8 @@ const ProductModel = require("../model/product.model");
         "__v": 0}
  */
 async function createProduct(req, res) {
-  console.log("controller started createProduct")
-  console.log(req.body)
+  console.log("controller started createProduct");
+  console.log(req.body);
   const payload = req.body;
   if (req.file) {
     let posterurl = `http://localhost:8080/${req.file.destination}/${req.file.filename}`;
@@ -49,4 +49,47 @@ async function createProduct(req, res) {
   }
 }
 
-module.exports = { createProduct };
+async function fetchProducts(req, res) {
+  let query = {};
+  if (req.query.category) {
+    query.category = req.query.category;
+  }
+
+  if (req.query.price) {
+    query.price = req.query.price;
+  }
+
+  let page = req.query.page || 1;
+  let itemPerPage = req.query.limit || 1;
+  let skip = (page - 1) * itemPerPage;
+
+  try {
+    const totalProductCount = await ProductModel.countDocuments();
+    const products = await ProductModel.find(query)
+      .skip(skip)
+      .limit(itemPerPage);
+    res
+      .status(200)
+      .json({
+        message: "product fetched successfully",
+        data: products,
+        limit: itemPerPage,
+        total: totalProductCount,
+      });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
+async function fetchProductById(req, res) {
+  const { id } = req.params;
+  try {
+    const products = await ProductModel.findById(id);
+    res
+      .status(200)
+      .json({ message: "product fetched successfully", data: products });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
+
+module.exports = { createProduct, fetchProducts, fetchProductById };

@@ -1,5 +1,6 @@
 import apiEndPoints from "../routes/apiEndPoints";
 import axiosInstance from "./axiosInstance";
+import { itemPerPage } from "../constant/vaiables";
 
 // async function loginUserApi(payload) {
 //   try {
@@ -24,9 +25,9 @@ async function registerUserApi(payload) {
     return error.response.data.message || "Login failed";
   }
 }
-async function logoutUserApi(payload) {
+async function logoutUserApi() {
   try {
-    const response = await axiosInstance.post(apiEndPoints.LOGOUT, payload);
+    const response = await axiosInstance.get(apiEndPoints.LOGOUT);
     return response.data;
   } catch (error) {
     return error.response.data.message || "Login failed";
@@ -41,7 +42,36 @@ async function verifyUserLoginApi() {
   }
 }
 
+/// products api
+
+async function getAllproductApi(query) {
+  try {
+    const response = await axiosInstance.get(
+      `${apiEndPoints.GET_ALL_PRODUCTS(query)}`,
+    );
+    return response.data;
+  } catch (error) {
+    return error.response.data || { message: "failed to load products" };
+  }
+}
+async function getproductByIdApi(id) {
+  try {
+    const response = await axiosInstance.get(
+      `${apiEndPoints.GET_ALL_PRODUCTS}/${id}`,
+    );
+    return response.data;
+  } catch (error) {
+    return error.response.data || { message: "failed to load products" };
+  }
+}
+
 //create
 
-
-export { loginUserApi, registerUserApi, logoutUserApi, verifyUserLoginApi };
+export {
+  loginUserApi,
+  registerUserApi,
+  logoutUserApi,
+  verifyUserLoginApi,
+  getAllproductApi,
+  getproductByIdApi,
+};

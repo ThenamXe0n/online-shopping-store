@@ -1,13 +1,22 @@
 import { FaShoppingCart, FaStar, FaTag } from "react-icons/fa";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import { selectedProduct } from "../../redux/productSlice";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <div className="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 group">
-      <div onClick={() => navigate("/product/kjkjh34")} className="relative">
+      <div
+        onClick={() => {
+          dispatch(selectedProduct(product));
+          navigate(`/product/${product._id}`);
+        }}
+        className="relative"
+      >
         <img
-          src={product.img}
+          src={product.poster}
           alt={product.name}
           className="w-full h-64 object-cover"
         />

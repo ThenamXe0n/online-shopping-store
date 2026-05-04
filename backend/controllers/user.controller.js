@@ -50,7 +50,12 @@ async function LoginUser(req, res) {
     }
     //generate token
     const token = jwt.sign(
-      { id: user._id, name: user.name, email: user.email },
+      {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        profilePic: user.profilePic,
+      },
       process.env.JWT_SECRET_KEY,
       { expiresIn: "1d" },
     );

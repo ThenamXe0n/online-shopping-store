@@ -3,6 +3,8 @@ import { FaEnvelope, FaLock } from "react-icons/fa";
 import { loginUserApi } from "../service/apiCollections";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
+import { loginUserAsync } from "../redux/userSlice";
+import { useDispatch } from "react-redux";
 
 export default function LoginPage() {
   const {
@@ -12,19 +14,21 @@ export default function LoginPage() {
   } = useForm();
   const navigate = useNavigate();
 
+  const dispatch = useDispatch();
+
   const handleLoginUser = async (data) => {
     console.log("Login Data:", data);
-    alert(`Welcome back, ${data.email}`);
     try {
-      const response = await loginUserApi(data);
+      let response = await dispatch(loginUserAsync(data)).unwrap();
       toast.success(response.message);
-      localStorage.setItem(
-        "userdetails",
-        JSON.stringify(response?.data) || null,
-      );
+      // toast.success(response.message);
+      // localStorage.setItem(
+      //   "userdetails",
+      //   JSON.stringify(response?.data) || null,
+      // );
       navigate("/");
     } catch (error) {
-      alert(error);
+      toast.error(error);
     }
   };
 

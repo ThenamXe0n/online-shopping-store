@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import {
   FaShoppingCart,
   FaSearch,
@@ -6,24 +7,54 @@ import {
   FaUserCircle,
   FaChevronDown,
 } from "react-icons/fa";
+import { useSelector } from "react-redux";
 import { Link } from "react-router";
+import { logoutUserApi } from "../../service/apiCollections";
+import {Confirm} from "notiflix"
 
 const NavBar = () => {
-  const [isLoggedIn] = useState(true);
-  const [user] = useState({ name: "Rohit Sharma" });
+  const { isLoggedIn, userDetails } = useSelector((store) => store.user);
+  const user = userDetails;
+
+  async function handleLogout() {
+    // let ask = confirm("are you sure to logout?");
+    Confirm.show(
+      "Logout User",
+      "Are you sure to logout?",
+      "logout",
+      "cancel",
+      async () => {
+        try {
+          const response = await logoutUserApi();
+          window.location.reload();
+          toast.success(response.data.message);
+        } catch (error) {
+          toast.error("failed to logout");
+        }
+      },
+      () => {
+        toast.error("If you say so...");
+      },
+      {},
+    );
+    // if (!ask) {
+    //   return;
+    // }
+  }
+
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
         <h1 className="text-2xl font-bold">ShopSphere</h1>
 
         <nav className="hidden md:flex items-center gap-8 font-medium text-sm">
-          <a href="/">Home</a>
-          <a href="#categories">Categories</a>
-          <a href="#featured">Featured</a>
-          <a href="#offers">Offers</a>
-          <a href="/order">orders</a>
-          <a href="/cart">carts</a>
-          <a href="/checkout">checkout</a>
+          <Link to="/">Home</Link>
+          <Link to="/product">Product</Link>
+          <Link to="#featured">Featured</Link>
+          <Link to="#offers">Offers</Link>
+          <Link to="/order">orders</Link>
+          <Link to="/cart">carts</Link>
+          <Link to="/checkout">checkout</Link>
         </nav>
 
         <div className="flex items-center gap-4 text-lg">
@@ -34,18 +65,22 @@ const NavBar = () => {
           {isLoggedIn ? (
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full cursor-pointer">
-                <FaUserCircle className="text-2xl" />
+                {user.profilePic ? (
+                  <img className="size-6 rounded-full" src={user.profilePic} />
+                ) : (
+                  <FaUserCircle className="text-2xl" />
+                )}
                 <span className="text-sm font-medium hidden sm:block">
                   {user?.name}
                 </span>
                 <FaChevronDown className="text-xs" />
               </div>
-              <Link
-                to={"/register"}
+              <button
+                onClick={handleLogout}
                 className="bg-red-600 text-white px-5 py-2 rounded-full text-sm"
               >
                 logout
-              </Link>
+              </button>
             </div>
           ) : (
             <div className="flex items-center gap-3">

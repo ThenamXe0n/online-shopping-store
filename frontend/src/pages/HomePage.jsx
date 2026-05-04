@@ -1,5 +1,7 @@
 import { FaShoppingCart, FaStar, FaArrowRight, FaShippingFast, FaShieldAlt, FaHeadset, FaTag } from 'react-icons/fa';
 import ProductCard from '../components/cards/ProductCard';
+import { useSelector } from 'react-redux';
+import {Link} from "react-router"
 
 const categories = [
   { name: 'Fashion', img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop' },
@@ -8,15 +10,16 @@ const categories = [
   { name: 'Beauty', img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop' },
 ];
 
-const featuredProducts = [
-  { name: 'Premium Sneakers', price: '₹2,499', mrp: '₹4,999', discount: '50% OFF', brand: 'Nike', category: 'Footwear', rating: 4.8, img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop' },
-  { name: 'Smart Watch', price: '₹3,199', mrp: '₹5,499', discount: '42% OFF', brand: 'Noise', category: 'Electronics', rating: 4.7, img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop' },
-  { name: 'Minimal Lamp', price: '₹1,199', mrp: '₹2,099', discount: '43% OFF', brand: 'Philips', category: 'Home Decor', rating: 4.6, img: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=1200&auto=format&fit=crop' },
-  { name: 'Luxury Perfume', price: '₹1,899', mrp: '₹3,299', discount: '41% OFF', brand: 'Bella Vita', category: 'Beauty', rating: 4.9, img: 'https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1200&auto=format&fit=crop' },
-];
+// const featuredProducts = [
+//   { name: 'Premium Sneakers', price: '₹2,499', mrp: '₹4,999', discount: '50% OFF', brand: 'Nike', category: 'Footwear', rating: 4.8, img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop' },
+//   { name: 'Smart Watch', price: '₹3,199', mrp: '₹5,499', discount: '42% OFF', brand: 'Noise', category: 'Electronics', rating: 4.7, img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop' },
+//   { name: 'Minimal Lamp', price: '₹1,199', mrp: '₹2,099', discount: '43% OFF', brand: 'Philips', category: 'Home Decor', rating: 4.6, img: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=1200&auto=format&fit=crop' },
+//   { name: 'Luxury Perfume', price: '₹1,899', mrp: '₹3,299', discount: '41% OFF', brand: 'Bella Vita', category: 'Beauty', rating: 4.9, img: 'https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1200&auto=format&fit=crop' },
+// ];
 
 export default function HomePage() {
 
+  const featuredProducts  = useSelector((store)=>store.product.productList)
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -67,10 +70,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-3xl font-bold">Featured Products</h2>
-            <button className="text-sm font-medium flex items-center gap-2">Browse All <FaArrowRight /></button>
+            <Link to="/product" className="text-sm font-medium flex items-center gap-2">Browse All <FaArrowRight /></Link>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product, index) => (
+            {featuredProducts.slice(0,4).map((product, index) => (
            <ProductCard key={index} product={product}/>
             ))}
           </div>

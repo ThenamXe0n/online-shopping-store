@@ -1,8 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import {
-  getAllproductApi,
-  getproductByIdApi,
-} from "../service/apiCollections";
+import { getAllproductApi, getproductByIdApi } from "../service/apiCollections";
 
 const initialState = {
   productList: [],
@@ -12,9 +9,9 @@ const initialState = {
 
 export const getAllproductAsync = createAsyncThunk(
   "product/getall",
-  async () => {
+  async (query) => {
     try {
-      const response = await getAllproductApi();
+      const response = await getAllproductApi(query);
       return response;
     } catch (error) {
       return error;
@@ -26,7 +23,7 @@ export const getproductByIdAsync = createAsyncThunk(
   async (id) => {
     try {
       const response = await getproductByIdApi(id);
-      console.log(response)
+      console.log(response);
       return response;
     } catch (error) {
       return error;
@@ -37,7 +34,12 @@ export const getproductByIdAsync = createAsyncThunk(
 const ProductSlice = createSlice({
   name: "product",
   initialState,
-  reducers: {},
+  reducers: {
+    selectedProduct: (state, action) => {
+      state.selectedProduct = action.payload;
+      state.isLoading = false;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAllproductAsync.pending, (state) => {
@@ -56,5 +58,5 @@ const ProductSlice = createSlice({
       });
   },
 });
-
+export const { selectedProduct } = ProductSlice.actions;
 export default ProductSlice.reducer;
