@@ -2,17 +2,23 @@ import { FaShoppingCart, FaStar, FaTag } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { selectedProduct } from "../../redux/productSlice";
-import { addItemToCartApi } from "../../service/apiCollections";
 import { addItemToCartAsync } from "../../redux/cartSlice";
+import { toast } from "react-hot-toast";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const userId = useSelector((store) => store.user?.userDetails?.id);
+  const { isLoggedIn } = useSelector((store) => store.user);
   console.log(userId);
 
   const handleAddToCart = async () => {
-    dispatch(addItemToCartAsync(product))
+    if (!isLoggedIn) {
+      navigate("/login");
+      toast.error("Login to add item in cart");
+      return;
+    }
+    dispatch(addItemToCartAsync(product));
     // let payload = {
     //   product: product._id,
     //   user: userId,

@@ -5,9 +5,21 @@ const CartModel = require("../model/cart.model");
  */
 async function addToCart(req, res) {
   try {
-    const cart = await CartModel.create({...req.body,user:req.userId});
-    const findItem = await CartModel.findById(cart._id).populate("product", "poster name price mrp discount")
-    res.status(201).json({ message: `product added to cart`, data: findItem });
+    //check if already exist
+    const isExist = await CartModel.findOne({
+      user: req.userId,
+      product: req.body.product,
+    });
+
+    if (isExist) {
+      isExist.quantity += 1;
+      await isExist.save();
+      res.status(201).json({ message: `product added to cart`, data: isExist });
+      return;
+    }
+
+    const cart = await CartModel.create({ ...req.body, user: req.userId });
+    res.status(201).json({ message: `product added to cart`, data: cart });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -20,12 +32,17 @@ async function getUserCart(req, res) {
     if (cart.length < 1) {
       return res
         .status(404)
-        .json({ message: "not items found . please add items to cart" });
+        .json({ message: "not items found . please add items to cart",data:[] });
     }
     res.status(200).json({ message: `cart fetched`, data: cart });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 }
+
+// delete or remove cart item
+
+// required payload : cartId
+
 
 module.exports = { addToCart, getUserCart };

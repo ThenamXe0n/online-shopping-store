@@ -12,7 +12,8 @@ const apiEndPoints = {
       return "/product"
     }
   },
-  ADD_TO_CART:"/cart/add"
+  ADD_TO_CART:"/cart/add",
+  GET_USER_CART:"/cart/getAll/userItems"
 };
 
 export default apiEndPoints;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaTrash,
   FaMinus,
@@ -7,7 +7,8 @@ import {
   FaTag,
   FaLock,
 } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserCartItemAsync } from "../redux/cartSlice";
 
 // const initialCartItems = [
 //   {
@@ -42,38 +43,44 @@ import { useSelector } from "react-redux";
 // ];
 
 export default function CartPage() {
-  const initialCartItems = useSelector((store)=>store.cart.cartItems)
-  const [cartItems, setCartItems] = useState(initialCartItems);
+  const cartItems = useSelector((store) => store.cart.cartItems);
+  // const [cartItems, setCartItems] = useState(initialCartItems);
+  const dispatch = useDispatch();
+  // const increaseQty = (id) => {
+  //   setCartItems(
+  //     cartItems.map((item) =>
+  //       item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
+  //     ),
+  //   );
+  // };
 
-  const increaseQty = (id) => {
-    setCartItems(
-      cartItems.map((item) =>
-        item.id === id ? { ...item, qty: item.qty + 1 } : item,
-      ),
-    );
-  };
+  // const decreaseQty = (id) => {
+  //   setCartItems(
+  //     cartItems.map((item) =>
+  //       item.id === id && item.quantity > 1
+  //         ? { ...item, quantity: item.quantity - 1 }
+  //         : item,
+  //     ),
+  //   );
+  // };
 
-  const decreaseQty = (id) => {
-    setCartItems(
-      cartItems.map((item) =>
-        item.id === id && item.qty > 1 ? { ...item, qty: item.qty - 1 } : item,
-      ),
-    );
-  };
+  // const removeItem = (id) => {
+  //   setCartItems(cartItems.filter((item) => item.id !== id));
+  // };
 
-  const removeItem = (id) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
-  };
-
-  const subtotal = cartItems.reduce(
-    (acc, item) => acc + item.price * item.qty,
+  const subtotal = cartItems?.reduce(
+    (acc, item) => acc + item.price * item.quantity,
     0,
   );
-  const totalMrp = cartItems.reduce(
-    (acc, item) => acc + item.mrp * item.qty,
+  const totalMrp = cartItems?.reduce(
+    (acc, item) => acc + item.mrp * item.quantity,
     0,
   );
   const savings = totalMrp - subtotal;
+
+  useEffect(() => {
+    dispatch(getUserCartItemAsync());
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 px-4 sm:px-6 py-10">
@@ -111,7 +118,7 @@ export default function CartPage() {
                       </span>
                     </div>
                     <button
-                      onClick={() => removeItem(item.id)}
+                      onClick={() => console.log(item.id)}
                       className="text-gray-400 hover:text-red-500"
                     >
                       <FaTrash />
@@ -128,14 +135,14 @@ export default function CartPage() {
                   <div className="mt-5 flex items-center justify-between flex-wrap gap-4">
                     <div className="flex items-center border rounded-full overflow-hidden">
                       <button
-                        onClick={() => decreaseQty(item.id)}
+                        // onClick={() => decreaseQty(item.id)}
                         className="px-4 py-2 hover:bg-gray-100"
                       >
                         <FaMinus />
                       </button>
-                      <span className="px-5 font-medium">{item.qty}</span>
+                      <span className="px-5 font-medium">{item.quantity}</span>
                       <button
-                        onClick={() => increaseQty(item.id)}
+                        // onClick={() => increaseQty(item.id)}
                         className="px-4 py-2 hover:bg-gray-100"
                       >
                         <FaPlus />
