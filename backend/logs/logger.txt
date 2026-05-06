@@ -1478,3 +1478,6 @@
  Tue May 05 2026 18:45:44 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
  Tue May 05 2026 18:45:44 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
  Tue May 05 2026 18:45:44 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 16:53:27 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 16:53:27 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 16:53:27 GMT+0530 (India Standard Time) GET /upload/noprofile.jpg 200
