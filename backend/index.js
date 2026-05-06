@@ -8,6 +8,7 @@ const ProductRouter = require("./routes/product.routes");
 const UserRouter = require("./routes/user.routes");
 const CartRouter = require("./routes/cart.routes");
 const OrderRouter = require("./routes/order.routes");
+const PaymentRouter = require("./routes/payment.routes");
 const mylogger = require("./utils/loggerHelperFunction");
 const cookieParser = require("cookie-parser");
 
@@ -41,6 +42,7 @@ server.use("/cart", CartRouter);
 //order router
 server.use("/order", OrderRouter);
 
+server.use("/api/payment", PaymentRouter);
 
 server.listen(process.env.PORT, async () => {
   try {

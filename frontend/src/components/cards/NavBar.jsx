@@ -10,12 +10,13 @@ import {
 import { useSelector } from "react-redux";
 import { Link } from "react-router";
 import { logoutUserApi } from "../../service/apiCollections";
-import {Confirm} from "notiflix"
+import { Confirm } from "notiflix";
 
 const NavBar = () => {
   const { isLoggedIn, userDetails } = useSelector((store) => store.user);
   const user = userDetails;
-
+  const { totalItems } = useSelector((store) => store.cart);
+  console.log(totalItems);
   async function handleLogout() {
     // let ask = confirm("are you sure to logout?");
     Confirm.show(
@@ -60,8 +61,14 @@ const NavBar = () => {
         <div className="flex items-center gap-4 text-lg">
           <FaSearch className="cursor-pointer" />
           <FaHeart className="cursor-pointer" />
-          <FaShoppingCart className="cursor-pointer" />
-
+          {totalItems > 0 ? (
+            <div className="flex items-center gap-1 bg-green-600 text-white px-4 py-1 rounded-full">
+              <FaShoppingCart className="cursor-pointer" />
+              <span className="text-sm">1</span>
+            </div>
+          ) : (
+            <FaShoppingCart className="cursor-pointer" />
+          )}
           {isLoggedIn ? (
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full cursor-pointer">

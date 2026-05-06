@@ -9,8 +9,9 @@ const { generateOrderId } = require("../utils/helpers");
  */
 
 async function generateOrder(req, res) {
-  const { user, items, address, totalAmount } = req.body;
-  if (!user || !items || !address || !totalAmount) {
+  const userId = req.userId;
+  const { items, address, totalAmount } = req.body;
+  if (!userId || !items || !address || !totalAmount) {
     return res.status(400).json({ message: "all fields are required" });
   }
   if (totalAmount <= 0) {
@@ -18,7 +19,7 @@ async function generateOrder(req, res) {
       .status(400)
       .json({ message: "total amount should be greater than zero" });
   }
-  let payload = { ...req.body };
+  let payload = { ...req.body, user: userId };
   try {
     let orderId = generateOrderId();
     payload.orderId = orderId;
@@ -37,13 +38,13 @@ async function generateOrder(req, res) {
  */
 
 async function getOrdersByUserId(req, res) {
-  const { userId } = req.params;
+  const userId = req.userId;
   try {
     const orders = await OrderModel.find({ user: userId })
       .populate("user", "name email")
       .populate("items.productDetails", "name poster category brand");
     if (!orders || orders.length === 0) {
-      return res.status(404).json({ message: "no orders found for this user" });
+      return res.status(404).json({ message: "no orders found for this user" ,data:[]});
     }
     res
       .status(200)

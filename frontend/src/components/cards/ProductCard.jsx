@@ -19,6 +19,7 @@ const ProductCard = ({ product }) => {
       return;
     }
     dispatch(addItemToCartAsync(product));
+    toast.success("Item added to cart!")
     // let payload = {
     //   product: product._id,
     //   user: userId,
@@ -54,9 +55,9 @@ const ProductCard = ({ product }) => {
           <FaStar /> {product.rating}
         </div>
         <div className="mt-3 flex items-center gap-2 flex-wrap">
-          <span className="text-2xl font-bold">{product.price}</span>
+          <span className="text-2xl font-bold">{product.price} Rs</span>
           <span className="text-sm text-gray-400 line-through">
-            {product.mrp}
+            {product.mrp} Rs
           </span>
         </div>
         <div className="mt-4 flex justify-between items-center">

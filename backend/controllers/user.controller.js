@@ -90,7 +90,6 @@ async function logoutUser(req, res) {
 async function verifyLogin(req, res) {
   try {
     const token = req.cookies.secureToken;
-    console.log("cookies", req.cookies);
     if (!token) {
       return res.status(401).json({
         message: "unauthorized",
