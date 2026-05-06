@@ -19,6 +19,7 @@ const ProductCard = ({ product }) => {
       return;
     }
     dispatch(addItemToCartAsync(product));
+    toast.success("item added to cart")
     // let payload = {
     //   product: product._id,
     //   user: userId,

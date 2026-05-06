@@ -1,9 +1,9 @@
 const { generateOrder,getOrdersByUserId } = require("../controllers/order.controller");
-
+const {isLoggedIn} = require("../middleware/auth.middleware")
 const router = require("express").Router();
 
 
-router.post("/generate", generateOrder);
-router.get("/:userId/getall", getOrdersByUserId);
+router.post("/generate",isLoggedIn, generateOrder);
+router.get("/myorders",isLoggedIn, getOrdersByUserId);
 
 module.exports = router;

@@ -8,8 +8,12 @@ import {
   FaLock,
 } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserCartItemAsync } from "../redux/cartSlice";
-
+import {
+  getUserCartItemAsync,
+  removeUserCartItemAsync,
+} from "../redux/cartSlice";
+import { toast } from "react-hot-toast";
+import {useNavigate} from "react-router"
 // const initialCartItems = [
 //   {
 //     id: 1,
@@ -46,6 +50,7 @@ export default function CartPage() {
   const cartItems = useSelector((store) => store.cart.cartItems);
   // const [cartItems, setCartItems] = useState(initialCartItems);
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   // const increaseQty = (id) => {
   //   setCartItems(
   //     cartItems.map((item) =>
@@ -64,9 +69,10 @@ export default function CartPage() {
   //   );
   // };
 
-  // const removeItem = (id) => {
-  //   setCartItems(cartItems.filter((item) => item.id !== id));
-  // };
+  const removeItem = async (id) => {
+    dispatch(removeUserCartItemAsync(id));
+    toast.success("item removed successfully");
+  };
 
   const subtotal = cartItems?.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -118,7 +124,7 @@ export default function CartPage() {
                       </span>
                     </div>
                     <button
-                      onClick={() => console.log(item.id)}
+                      onClick={() => removeItem(item.id)}
                       className="text-gray-400 hover:text-red-500"
                     >
                       <FaTrash />
@@ -186,7 +192,7 @@ export default function CartPage() {
                 You saved ₹{savings} on this order
               </p>
 
-              <button className="w-full bg-black text-white py-4 rounded-full font-semibold text-sm shadow-lg hover:opacity-90 transition flex items-center justify-center gap-2">
+              <button disabled={!cartItems.length} onClick={()=>navigate("/checkout")} className="w-full disabled:bg-neutral-400 disabled:cursor-not-allowed bg-black text-white py-4 rounded-full font-semibold text-sm shadow-lg hover:opacity-90 transition flex items-center justify-center gap-2">
                 <FaLock /> Proceed To Checkout
               </button>
             </div>

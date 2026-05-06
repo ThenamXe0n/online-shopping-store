@@ -1481,3 +1481,206 @@
  Wed May 06 2026 16:53:27 GMT+0530 (India Standard Time) GET /user/verify-login 200
  Wed May 06 2026 16:53:27 GMT+0530 (India Standard Time) GET /product 200
  Wed May 06 2026 16:53:27 GMT+0530 (India Standard Time) GET /upload/noprofile.jpg 200
+ Wed May 06 2026 17:31:17 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 17:31:17 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 17:31:17 GMT+0530 (India Standard Time) GET /upload/noprofile.jpg 200
+ Wed May 06 2026 17:31:17 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 17:31:17 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 17:32:05 GMT+0530 (India Standard Time) GET /user/logout 200
+ Wed May 06 2026 17:32:06 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 17:32:06 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 17:32:06 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 17:32:06 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 17:32:33 GMT+0530 (India Standard Time) POST /user/login 200 
+ {"email":"thenameet0@gmail.com","password":"123456"}
+ Wed May 06 2026 17:32:33 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 17:38:48 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 17:38:55 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:40:12 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 17:40:15 GMT+0530 (India Standard Time) POST /cart/add 200 
+ {"product":"69f5f2fd25a860ef40a93924"}
+ Wed May 06 2026 17:40:18 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:40:24 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 17:41:15 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:47:22 GMT+0530 (India Standard Time) DELETE /cart/remove/69fafb5782bf43d195f43e71 200
+ Wed May 06 2026 17:48:21 GMT+0530 (India Standard Time) DELETE /cart/remove/69fafb5782bf43d195f43e71 200
+ Wed May 06 2026 17:51:14 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 17:51:14 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 17:51:15 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:51:15 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 17:51:15 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 17:51:15 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 17:51:46 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 17:51:46 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 17:51:46 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 17:51:46 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:51:46 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 17:51:46 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 17:53:48 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 17:53:48 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 17:53:50 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:53:50 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 17:53:51 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 17:53:51 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 17:54:02 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:54:20 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:54:33 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:55:23 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 17:55:23 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 17:55:23 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:55:23 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 17:55:24 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 17:55:24 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 17:55:48 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 17:55:48 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 17:55:49 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 17:55:49 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:55:49 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 17:55:49 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 17:55:57 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 17:55:57 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 17:55:57 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 17:55:57 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:55:57 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 17:55:57 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 17:56:20 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 17:56:20 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 17:56:20 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 17:56:20 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:56:20 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 17:56:20 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 17:56:30 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:57:23 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:58:40 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:59:11 GMT+0530 (India Standard Time) DELETE /cart/remove/69fa020d6d891ca0a0173fa4 200
+ Wed May 06 2026 17:59:42 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 17:59:42 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 17:59:43 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 17:59:43 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 17:59:43 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 18:02:12 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 18:02:12 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:02:13 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:02:13 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 18:02:13 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 18:03:50 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 18:03:50 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:03:51 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:03:51 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 18:03:51 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 18:04:59 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 18:04:59 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:05:01 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 18:05:01 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:05:01 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 18:05:03 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 18:05:03 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:05:03 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:05:03 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 18:05:03 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 18:05:53 GMT+0530 (India Standard Time) DELETE /cart/remove/69fa020b6d891ca0a0173fa3 200
+ Wed May 06 2026 18:06:56 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 18:06:56 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:06:56 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:06:56 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 18:07:00 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:07:06 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 18:07:06 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:07:07 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 18:07:07 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:07:14 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 18:07:14 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 18:07:14 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:07:17 GMT+0530 (India Standard Time) POST /cart/add 200 
+ {"product":"69f5f2fd25a860ef40a93924"}
+ Wed May 06 2026 18:07:19 GMT+0530 (India Standard Time) POST /cart/add 200 
+ {"product":"69f5f889ecfaf53266d88df3"}
+ Wed May 06 2026 18:07:22 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:07:24 GMT+0530 (India Standard Time) DELETE /cart/remove/69fb35fd079ca210efa90358 200
+ Wed May 06 2026 18:07:55 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 18:08:05 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 18:08:05 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:08:05 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 18:08:05 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:08:06 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 18:09:42 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:09:42 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 18:09:57 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:10:19 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 18:10:19 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:10:23 GMT+0530 (India Standard Time) DELETE /cart/remove/69fb35ff079ca210efa90359 200
+ Wed May 06 2026 18:11:19 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:11:50 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:12:38 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:13:21 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:13:26 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:13:37 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 18:13:37 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 18:13:38 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:13:40 GMT+0530 (India Standard Time) POST /cart/add 200 
+ {"product":"69f5f2fd25a860ef40a93924"}
+ Wed May 06 2026 18:13:44 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:13:45 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 18:16:21 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 18:16:21 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:16:21 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 18:17:10 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 18:17:51 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 18:17:51 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:17:54 GMT+0530 (India Standard Time) POST /cart/add 200 
+ {"product":"69f5f889ecfaf53266d88df3"}
+ Wed May 06 2026 18:17:57 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:32:45 GMT+0530 (India Standard Time) POST /order/generate 200 
+ {"items":[{"productDetails":"69f5f2fd25a860ef40a93924","quantity":1,"price":8000},{"productDetails":"69f5f889ecfaf53266d88df3","quantity":1,"price":8000}],"address":{"fullName":"Nameet Mandwal","phone":"8319850260","pincode":"452001","city":"Indore","state":"Madhya Pradesh","addressLine":"kjhkjhkjhhjkh","landmark":"sdfd"},"totalAmount":16000}
+ Wed May 06 2026 18:34:40 GMT+0530 (India Standard Time) POST /order/generate 200 
+ {"items":[{"productDetails":"69f5f2fd25a860ef40a93924","quantity":1,"price":8000},{"productDetails":"69f5f889ecfaf53266d88df3","quantity":1,"price":8000}],"address":{"fullName":"Nameet Mandwal","phone":"8319850260","pincode":"452001","city":"Indore","state":"Madhya Pradesh","addressLine":"kjhkjhkjhhjkh","landmark":"sdfd"},"totalAmount":16000}
+ Wed May 06 2026 18:35:16 GMT+0530 (India Standard Time) POST /order/generate 200 
+ {"items":[{"productDetails":"69f5f2fd25a860ef40a93924","quantity":1,"price":8000},{"productDetails":"69f5f889ecfaf53266d88df3","quantity":1,"price":8000}],"address":{"fullName":"Nameet Mandwal","phone":"8319850260","pincode":"452001","city":"Indore","state":"Madhya Pradesh","addressLine":"kjhkjhkjhhjkh","landmark":"sdfd"},"totalAmount":16000}
+ Wed May 06 2026 18:35:53 GMT+0530 (India Standard Time) POST /order/generate 200 
+ {"items":[{"productDetails":"69f5f2fd25a860ef40a93924","quantity":1,"price":8000},{"productDetails":"69f5f889ecfaf53266d88df3","quantity":1,"price":8000}],"address":{"fullName":"Nameet Mandwal","phone":"8319850260","pincode":"452001","city":"Indore","state":"Madhya Pradesh","addressLine":"kjhkjhkjhhjkh","landmark":"sdfd"},"totalAmount":16000}
+ Wed May 06 2026 18:35:58 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 18:35:58 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:35:59 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 18:37:12 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:37:12 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 18:37:12 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 18:37:31 GMT+0530 (India Standard Time) POST /order/generate 200 
+ {"items":[{"productDetails":"69f5f2fd25a860ef40a93924","quantity":1,"price":8000},{"productDetails":"69f5f889ecfaf53266d88df3","quantity":1,"price":8000}],"address":{"fullName":"Nameet Mandwal","phone":"8319850260","pincode":"452001","city":"Indore","state":"Madhya Pradesh","addressLine":",mnjbmhjkjkhkj","landmark":"sdfd"},"totalAmount":16000}
+ Wed May 06 2026 18:38:27 GMT+0530 (India Standard Time) POST /order/generate 200 
+ {"items":[{"productDetails":"69f5f2fd25a860ef40a93924","quantity":1,"price":8000},{"productDetails":"69f5f889ecfaf53266d88df3","quantity":1,"price":8000}],"address":{"fullName":"","house":"34","contact":"78978978978","phone":"","pincode":"","city":"","state":"","addressLine":"","landmark":""},"totalAmount":16000}
+ Wed May 06 2026 18:39:20 GMT+0530 (India Standard Time) POST /order/generate 200 
+ {"items":[{"productDetails":"69f5f2fd25a860ef40a93924","quantity":1,"price":8000},{"productDetails":"69f5f889ecfaf53266d88df3","quantity":1,"price":8000}],"address":{"house":"41 b","city":"indore","state":"Madhya pradesh","contact":"9897678987","pincode":"465656"},"totalAmount":16000}
+ Wed May 06 2026 18:40:44 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 18:40:44 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:40:44 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 18:43:18 GMT+0530 (India Standard Time) GET /order/myorders 200
+ Wed May 06 2026 18:43:37 GMT+0530 (India Standard Time) POST /user/login 200 
+ {"email":"thenameet0@gmail.com","password":"123456"}
+ Wed May 06 2026 18:43:48 GMT+0530 (India Standard Time) GET /order/myorders 200
+ Wed May 06 2026 18:46:26 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 18:46:26 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:46:26 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 18:46:28 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 18:46:28 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:46:28 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 18:46:46 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 18:46:46 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:46:46 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 18:49:15 GMT+0530 (India Standard Time) GET /order/myorders 200
+ Wed May 06 2026 18:49:15 GMT+0530 (India Standard Time) GET /user/verify-login 200
+ Wed May 06 2026 18:49:15 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:49:15 GMT+0530 (India Standard Time) GET /upload/user/1777641131721-spider-man-miles-morales-ps5-figure-suit-5k-7b.jpg 200
+ Wed May 06 2026 18:49:15 GMT+0530 (India Standard Time) GET /order/myorders 200
+ Wed May 06 2026 18:49:15 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200
+ Wed May 06 2026 18:49:15 GMT+0530 (India Standard Time) GET /upload/product/1777726204964-41amrp7gg7l._sx342_sy445_ql70_fmwebp_.webp 200
+ Wed May 06 2026 18:50:24 GMT+0530 (India Standard Time) GET /order/myorders 200
+ Wed May 06 2026 18:50:37 GMT+0530 (India Standard Time) GET /order/myorders 200
+ Wed May 06 2026 18:50:40 GMT+0530 (India Standard Time) GET /product 200
+ Wed May 06 2026 18:50:41 GMT+0530 (India Standard Time) POST /cart/add 200 
+ {"product":"69f5f2fd25a860ef40a93924"}
+ Wed May 06 2026 18:50:45 GMT+0530 (India Standard Time) GET /cart/getAll/userItems 200
+ Wed May 06 2026 18:50:47 GMT+0530 (India Standard Time) DELETE /cart/remove/69fb387a079ca210efa9035b 200
+ Wed May 06 2026 18:52:09 GMT+0530 (India Standard Time) POST /order/generate 200 
+ {"items":[{"productDetails":"69f5f2fd25a860ef40a93924","quantity":2,"price":8000}],"address":{"house":"41 b","city":"indore","state":"Madhya pradesh","contact":"9897678987","pincode":"465656"},"totalAmount":16000}
+ Wed May 06 2026 18:52:16 GMT+0530 (India Standard Time) GET /order/myorders 200
+ Wed May 06 2026 18:52:16 GMT+0530 (India Standard Time) GET /upload/product/1777727625331-best-jordans-of-all-time-ranking-list-luxe-digital.jpg 200

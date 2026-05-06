@@ -68,17 +68,41 @@ async function getproductByIdApi(id) {
 //cart api
 async function addItemToCartApi(payload) {
   try {
-    const response = await axiosInstance.post(apiEndPoints.ADD_TO_CART, payload);
+    const response = await axiosInstance.post(
+      apiEndPoints.ADD_TO_CART,
+      payload,
+    );
     return response.data;
   } catch (error) {
     return error.response.data;
   }
 }
 
-
 async function getUserCartItemApi() {
   try {
     const response = await axiosInstance.get(apiEndPoints.GET_USER_CART);
+    return response.data;
+  } catch (error) {
+    return error.response.data;
+  }
+}
+async function removeUserCartItemApi(cartId) {
+  try {
+    const response = await axiosInstance.delete(
+      apiEndPoints.REMOVE_USER_CART_ITEM(cartId),
+    );
+    return response.data;
+  } catch (error) {
+    return error.response.data;
+  }
+}
+
+//orders api
+async function getMyOrdersApi(cartId) {
+  try {
+    const response = await axiosInstance.get(
+      apiEndPoints.MY_ORDERS,
+    );
     return response.data;
   } catch (error) {
     return error.response.data;
@@ -93,5 +117,7 @@ export {
   getAllproductApi,
   getproductByIdApi,
   addItemToCartApi,
-  getUserCartItemApi
+  getUserCartItemApi,
+  removeUserCartItemApi,
+  getMyOrdersApi
 };

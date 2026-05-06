@@ -32,7 +32,10 @@ async function getUserCart(req, res) {
     if (cart.length < 1) {
       return res
         .status(404)
-        .json({ message: "not items found . please add items to cart",data:[] });
+        .json({
+          message: "not items found . please add items to cart",
+          data: [],
+        });
     }
     res.status(200).json({ message: `cart fetched`, data: cart });
   } catch (error) {
@@ -41,8 +44,15 @@ async function getUserCart(req, res) {
 }
 
 // delete or remove cart item
+async function removeUserCartItem(req, res) {
+  try {
+    const item = await CartModel.findByIdAndDelete(req.params.cartId);
+    res.status(200).json({ message: "item removed successfully", data: item });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
 
 // required payload : cartId
 
-
-module.exports = { addToCart, getUserCart };
+module.exports = { addToCart, getUserCart ,removeUserCartItem};
