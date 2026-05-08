@@ -83,7 +83,7 @@ const CartSlice = createSlice({
       .addCase(getUserCartItemAsync.fulfilled, (state, action) => {
         state.isLoading = false;
         state.cartItems = action.payload;
-        state.totalItem = action.payload.length;
+        state.totalItems = action.payload.length;
       })
       .addCase(getUserCartItemAsync.rejected, (state) => {
         state.cartItems = [];
@@ -93,6 +93,7 @@ const CartSlice = createSlice({
         state.cartItems = state.cartItems.filter(
           (item) => item.id !== action.payload._id,
         );
+        state.totalItems -= state.totalItems;
       });
   },
 });

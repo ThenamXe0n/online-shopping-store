@@ -8,27 +8,46 @@ import {
   FaCheckCircle,
   FaTag,
   FaTruck,
+  FaSave,
 } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import axiosInstance from "../service/axiosInstance";
+import { Confirm } from "notiflix";
+import toast from "react-hot-toast";
+import PaymentButton from "../components/cards/ui/PaymentButton";
 // const orderItems = [
 //   { id: 1, name: 'mindcoders', qty: 1, price: 2499, img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=400&auto=format&fit=crop' },
 //   { id: 2, name: 'Smart Watch', qty: 2, price: 3199, img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=400&auto=format&fit=crop' },
 // ];
 
+const paymentMode = [
+  {
+    id: "cod",
+    icon: <FaMoneyBillWave />,
+    label: "Cash on Delivery",
+  },
+  { id: "upi", icon: <FaUniversity />, label: "UPI / Banking" },
+  {
+    id: "card",
+    icon: <FaCreditCard />,
+    label: "Debit / Credit",
+  },
+];
+
 export default function CheckoutPage() {
   const [paymentMethod, setPaymentMethod] = useState("cod");
-  const [address, setAddress] = useState({
-    fullName: "",
-    house: "34",
-    contact: "78978978978",
-    phone: "",
-    pincode: "",
-    city: "",
-    state: "",
-    addressLine: "",
-    landmark: "",
-  });
+  const [address, setAddress] = useState(
+    JSON.parse(localStorage.getItem("savedAddress")) || {
+      fullName: "",
+      house: "",
+      contact: "",
+      pincode: "",
+      city: "",
+      state: "",
+      addressLine: "",
+      landmark: "",
+    },
+  );
   const orderItems = useSelector((store) => store.cart.cartItems);
   const subtotal = orderItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -57,9 +76,27 @@ export default function CheckoutPage() {
       totalAmount: subtotal,
     };
     console.log("payload", payload);
+    if (paymentMethod === "cod") {
+      payload.paymentMode = "cod";
+      await axiosInstance.post("/order/generate", payload);
+      alert("order placed successfully");
+    }
+  };
 
-    await axiosInstance.post("/order/generate", payload);
-    alert("order placed successfully");
+  const handleSaveAddress = () => {
+    Confirm.show(
+      "Save Address",
+      "Are you sure to Save this Address?",
+      "Save",
+      "cancel",
+      () => {
+        localStorage.setItem("savedAddress", JSON.stringify(address));
+        toast.success("Address Saved!!");
+      },
+      () => {
+        toast.error("If you say so...");
+      },
+    );
   };
 
   return (
@@ -102,17 +139,18 @@ export default function CheckoutPage() {
                   className="bg-gray-50 text-sm border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black"
                 />
                 <input
-                  name="phone"
-                  value={address.phone}
+                  name="contact"
+                  value={address.contact}
                   onChange={handleChange}
                   placeholder="Phone Number"
                   className="bg-gray-50 text-sm border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black"
                 />
+
                 <input
-                  name="pincode"
-                  value={address.pincode}
+                  name="house"
+                  value={address.house}
                   onChange={handleChange}
-                  placeholder="Pincode"
+                  placeholder="House no. e.g 45 B"
                   className="bg-gray-50 text-sm border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black"
                 />
                 <input
@@ -130,11 +168,18 @@ export default function CheckoutPage() {
                   className="bg-gray-50 text-sm border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black"
                 />
                 <input
+                  name="pincode"
+                  value={address.pincode}
+                  onChange={handleChange}
+                  placeholder="Pincode"
+                  className="bg-gray-50 text-sm border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black"
+                />
+                <input
                   name="landmark"
                   value={address.landmark}
                   onChange={handleChange}
                   placeholder="Landmark"
-                  className="bg-gray-50 text-sm border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black"
+                  className="bg-gray-50 col-span-2 text-sm border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black"
                 />
                 <textarea
                   name="addressLine"
@@ -144,6 +189,13 @@ export default function CheckoutPage() {
                   className="sm:col-span-2 bg-gray-50 text-sm border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:border-black min-h-[90px]"
                 ></textarea>
               </div>
+              <button
+                onClick={handleSaveAddress}
+                type="button"
+                className="bg-black text-white px-3 py-1 rounded-md flex items-center gap-3 mt-5"
+              >
+                <FaSave /> Save Address
+              </button>
             </div>
 
             <div className="bg-white rounded-[28px] shadow-[0_12px_30px_rgba(0,0,0,0.05)] border border-gray-100 p-6">
@@ -151,19 +203,7 @@ export default function CheckoutPage() {
                 <FaCreditCard /> Payment Method
               </h2>
               <div className="grid sm:grid-cols-3 gap-4">
-                {[
-                  {
-                    id: "cod",
-                    icon: <FaMoneyBillWave />,
-                    label: "Cash on Delivery",
-                  },
-                  { id: "upi", icon: <FaUniversity />, label: "UPI / Banking" },
-                  {
-                    id: "card",
-                    icon: <FaCreditCard />,
-                    label: "Debit / Credit",
-                  },
-                ].map((method) => (
+                {paymentMode.map((method) => (
                   <label
                     key={method.id}
                     className={`rounded-2xl p-4 border-2 cursor-pointer flex flex-col items-center justify-center gap-3 text-center text-sm font-medium min-h-[110px] ${paymentMethod === method.id ? "border-black bg-gray-50" : "border-gray-200 bg-white"}`}
@@ -225,12 +265,19 @@ export default function CheckoutPage() {
                 <span>₹{subtotal - 300}</span>
               </div>
 
-              <button
-                onClick={handleCheckout}
-                className="w-full bg-black text-white py-3.5 rounded-full font-semibold text-sm shadow-xl hover:opacity-90 transition flex items-center justify-center gap-2"
-              >
-                <FaLock /> Place Order
-              </button>
+              {paymentMethod === "cod" ? (
+                <button
+                  onClick={handleCheckout}
+                  className="w-full bg-black text-white py-3.5 rounded-full font-semibold text-sm shadow-xl hover:opacity-90 transition flex items-center justify-center gap-2"
+                >
+                  <FaLock /> Place Order
+                </button>
+              ) : (
+                <PaymentButton
+                  cartItems={orderItems}
+                  shippingAddress={address}
+                />
+              )}
             </div>
           </div>
         </div>

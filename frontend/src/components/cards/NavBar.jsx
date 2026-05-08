@@ -10,10 +10,11 @@ import {
 import { useSelector } from "react-redux";
 import { Link } from "react-router";
 import { logoutUserApi } from "../../service/apiCollections";
-import {Confirm} from "notiflix"
+import { Confirm } from "notiflix";
 
 const NavBar = () => {
   const { isLoggedIn, userDetails } = useSelector((store) => store.user);
+  const {totalItems} =  useSelector((store)=>store.cart)
   const user = userDetails;
 
   async function handleLogout() {
@@ -42,26 +43,35 @@ const NavBar = () => {
     // }
   }
 
+  const navData = [
+    { link: "/", label: "Home" },
+    { link: "/product", label: "Product" },
+    { link: "/orders", label: "My orders" },
+  ];
+
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
         <h1 className="text-2xl font-bold">ShopSphere</h1>
 
         <nav className="hidden md:flex items-center gap-8 font-medium text-sm">
-          <Link to="/">Home</Link>
-          <Link to="/product">Product</Link>
-          <Link to="#featured">Featured</Link>
-          <Link to="#offers">Offers</Link>
+          {navData.map((nav, navIdx) => (
+            <Link key={navIdx} to={nav.link}>
+              {nav.label}
+            </Link>
+          ))}
+          {/* <Link to="/product">Product</Link>
           <Link to="/order">orders</Link>
           <Link to="/cart">carts</Link>
-          <Link to="/checkout">checkout</Link>
+          <Link to="/checkout">checkout</Link> */}
         </nav>
 
         <div className="flex items-center gap-4 text-lg">
           <FaSearch className="cursor-pointer" />
           <FaHeart className="cursor-pointer" />
-          <FaShoppingCart className="cursor-pointer" />
-
+          <Link className="flex items-center gap-1 bg-blue-700 text-white px-2 rounded-full py-1" to={"/cart"}>
+            <FaShoppingCart className="cursor-pointer" /> <span>{totalItems}</span>
+          </Link>
           {isLoggedIn ? (
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full cursor-pointer">

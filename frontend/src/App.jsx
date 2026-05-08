@@ -14,13 +14,14 @@ import { useEffect } from "react";
 import Notiflix from "notiflix";
 import ProductPage from "./pages/ProductPage";
 import { getAllproductAsync } from "./redux/productSlice";
+import { getUserCartItemAsync } from "./redux/cartSlice";
 // import { fetchUserCartItemsAsync } from "./redux/CartSlice";
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(verifyUserLoginAsync());
-    // dispatch(fetchUserCartItemsAsync());
+    dispatch(getUserCartItemAsync());
     dispatch(getAllproductAsync());
   }, []);
 
@@ -62,6 +63,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/product" element={<ProductPage />} />
+        <Route path="/payment-success" element={<div className="h-screen w-screen bg-green flex items-center justify-center text-3xl"><span className="animate-bounce">Payment successfull!!</span></div>} />
         <Route
           path="/cart"
           element={

@@ -27,6 +27,10 @@ const OrderSchema = new Schema(
       },
     ],
     address: {
+      fullName: {
+        type: String,
+        required: true,
+      },
       house: {
         type: String,
         required: true,
@@ -47,6 +51,12 @@ const OrderSchema = new Schema(
         type: String,
         required: true,
       },
+      addressLine: {
+        type: String,
+      },
+      landmark: {
+        type: String,
+      },
     },
     orderStatus: {
       type: String,
@@ -63,6 +73,10 @@ const OrderSchema = new Schema(
     discount: {
       type: Number,
       default: 0,
+    },
+    paymentMode: {
+      type: String,
+      default: "cod",
     },
     totalAmount: {
       type: Number,
